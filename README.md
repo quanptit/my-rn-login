@@ -46,10 +46,7 @@ Thêm vào AndroidManifest.xml
                 <data android:scheme="@string/fb_login_protocol_scheme"/>
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/face_app_id"/>
+       
 ```
 Chỉ cần gọi và sử dụng component. 
 nếu login error sẽ không trả về callback mà tự show dialog thông báo rồi
