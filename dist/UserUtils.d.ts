@@ -1,4 +1,4 @@
-import { User } from './';
+import { User } from "my-rn-base-utils";
 export declare class UserUtils {
     private static userLogged;
     static getUserObj(): User;

@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 import {Text, ViewProps} from 'react-native'
 import {UserUtils} from './UserUtils'
-import {User} from './index'
 import {PopupDialog, Toast, Button, ButtonModel, StyleUtils} from "my-rn-base-component";
 import {getStringsCommon} from "my-rn-common-resource"
+import {User} from "my-rn-base-utils";
 
 const s = StyleUtils.getAllStyle();
 

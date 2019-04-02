@@ -1,5 +1,5 @@
 import {NativeModules} from 'react-native'
-import {User} from "./index";
+import {User} from "my-rn-base-utils";
 
 export class RNLoginMoudule {
     /**

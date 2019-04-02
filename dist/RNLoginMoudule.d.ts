@@ -1,4 +1,4 @@
-import { User } from "./index";
+import { User } from "my-rn-base-utils";
 export declare class RNLoginMoudule {
     /**
      * provider: enum (facebook, google). <br>

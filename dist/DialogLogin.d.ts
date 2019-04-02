@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { ViewProps } from 'react-native';
-import { User } from './index';
+import { User } from "my-rn-base-utils";
 interface Props extends ViewProps {
     callbackLoginSuccess: (user: User) => void;
 }

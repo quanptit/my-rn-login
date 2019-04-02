@@ -1,6 +1,5 @@
-import {User} from './'
 import {getStringsCommon} from "my-rn-common-resource";
-import {isIOS, PreferenceUtils, RNCommonUtils} from "my-rn-base-utils";
+import {isIOS, PreferenceUtils, RNCommonUtils, User} from "my-rn-base-utils";
 import {RNLoginMoudule} from "./RNLoginMoudule";
 
 
