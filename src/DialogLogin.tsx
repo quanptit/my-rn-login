@@ -9,7 +9,6 @@ import {getStringsCommon} from "my-rn-common-resource"
 const s = StyleUtils.getAllStyle();
 
 interface Props extends ViewProps {
-    /**  Nếu có cái này => không replace HomeScreen nữa */
     callbackLoginSuccess: (user: User) => void
 }
 

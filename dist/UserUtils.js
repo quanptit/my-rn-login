@@ -1,11 +1,6 @@
-import { NativeModules } from 'react-native';
 import { getStringsCommon } from "my-rn-common-resource";
-import { isIOS, PreferenceUtils, RNCommonUtils } from "my-rn-base-utils";
-let loginIOS;
-if (isIOS()) {
-    let { LoginIOS } = require('./LoginIOS');
-    loginIOS = LoginIOS;
-}
+import { PreferenceUtils, RNCommonUtils } from "my-rn-base-utils";
+import { RNLoginMoudule } from "./RNLoginMoudule";
 export class UserUtils {
     static getUserObj() {
         if (this.userLogged == undefined)
@@ -46,13 +41,7 @@ export class UserUtils {
      * return: {name, id, email}
      * */
     static async loginAndGetUser(provider) {
-        let user;
-        if (isIOS()) {
-            user = await loginIOS.loginAndGetUser(provider);
-        }
-        else {
-            user = await NativeModules.RNLoginMoudule.loginAndGetUser(provider);
-        }
+        let user = await RNLoginMoudule.loginAndGetUser(provider);
         if (user) {
             await this.setUserLogged(user);
             UserUtils.userLogged = user;
@@ -61,16 +50,9 @@ export class UserUtils {
         return null;
     }
     static async logout(provider) {
-        if (isIOS()) {
-            await loginIOS.logout(provider);
-        }
         await PreferenceUtils.deleteKey("USER");
     }
     static async logoutAll() {
-        if (isIOS()) {
-            await loginIOS.logout("facebook");
-            await loginIOS.logout("google");
-        }
         await PreferenceUtils.deleteKey("USER");
     }
     static async setUserLogged(user) {

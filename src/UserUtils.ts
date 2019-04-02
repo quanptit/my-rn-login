@@ -1,13 +1,7 @@
-import {NativeModules} from 'react-native'
 import {User} from './'
 import {getStringsCommon} from "my-rn-common-resource";
 import {isIOS, PreferenceUtils, RNCommonUtils} from "my-rn-base-utils";
-
-let loginIOS;
-if (isIOS()) {
-    let {LoginIOS} = require('./LoginIOS');
-    loginIOS = LoginIOS;
-}
+import {RNLoginMoudule} from "./RNLoginMoudule";
 
 
 export class UserUtils {
@@ -54,12 +48,7 @@ export class UserUtils {
      * return: {name, id, email}
      * */
     static async loginAndGetUser(provider: string): Promise<User> {
-        let user: User;
-        if (isIOS()) {
-            user = await loginIOS.loginAndGetUser(provider);
-        } else {
-            user = await NativeModules.RNLoginMoudule.loginAndGetUser(provider);
-        }
+        let user = await RNLoginMoudule.loginAndGetUser(provider);
         if (user) {
             await this.setUserLogged(user);
             UserUtils.userLogged = user;
@@ -69,18 +58,10 @@ export class UserUtils {
     }
 
     static async logout(provider: "facebook" | "google") {
-        if (isIOS()) {
-            await loginIOS.logout(provider);
-        }
-
         await PreferenceUtils.deleteKey("USER");
     }
 
     static async logoutAll() {
-        if (isIOS()) {
-            await loginIOS.logout("facebook");
-            await loginIOS.logout("google");
-        }
         await PreferenceUtils.deleteKey("USER");
     }
 

@@ -15,9 +15,6 @@
   "nativePackage": true,
   "dependencies": {},
   "devDependencies": {
-    "my-rn-common-resource": "git+https://gitlab.com/react-native-my-libs/my-rn-common-resource.git",
-    "my-rn-base-utils": "git+https://gitlab.com/react-native-my-libs/my-rn-base-utils.git",
-    "my-rn-base-component": "git+https://gitlab.com/react-native-my-libs/my-rn-base-component.git"
   },
   "peerDependencies": {
   }

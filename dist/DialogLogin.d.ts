@@ -2,7 +2,6 @@ import { Component } from 'react';
 import { ViewProps } from 'react-native';
 import { User } from './index';
 interface Props extends ViewProps {
-    /**  Nếu có cái này => không replace HomeScreen nữa */
     callbackLoginSuccess: (user: User) => void;
 }
 export declare class DialogLogin extends Component<Props> {
