@@ -53,7 +53,7 @@ export class DialogLogin extends Component<Props> {
 
     private _renderSignGoogle() {
         return (
-            <Button model={ButtonModel.primary} style={{backgroundColor: "#F73C2B", alignSelf: "center", marginTop: 10, width: 250, marginBottom: 30}}
+            <Button model={ButtonModel.primary} style={{backgroundColor: "#F73C2B", alignSelf: "center", width: 250, marginBottom: 30}}
                     onPress={async () => {
                         this.dismiss();
                         try {

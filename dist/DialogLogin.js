@@ -37,7 +37,7 @@ export class DialogLogin extends Component {
             </Button>);
     }
     _renderSignGoogle() {
-        return (<Button model={ButtonModel.primary} style={{ backgroundColor: "#F73C2B", alignSelf: "center", marginTop: 10, width: 250, marginBottom: 30 }} onPress={async () => {
+        return (<Button model={ButtonModel.primary} style={{ backgroundColor: "#F73C2B", alignSelf: "center", width: 250, marginBottom: 30 }} onPress={async () => {
             this.dismiss();
             try {
                 let id = await UserUtils.loginAndGetUser("google");
