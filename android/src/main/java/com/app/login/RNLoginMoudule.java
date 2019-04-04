@@ -31,13 +31,13 @@ public class RNLoginMoudule extends ReactContextBaseJavaModule {
     GoogleLoginUtilsNewAPI googleLoginUtils;
 
     private void loginAndGetUserFacebook(Promise promise) {
-        try {
-            facebookLoginUtils = new FacebookLoginUtils(getReactApplicationContext());
-            facebookLoginUtils.loginAndGetUser(promise, this, this.getCurrentActivity());
-        } catch (Exception e) {
-            e.printStackTrace();
-            promise.reject("0", e.getMessage());
-        }
+//        try {
+//            facebookLoginUtils = new FacebookLoginUtils(getReactApplicationContext());
+//            facebookLoginUtils.loginAndGetUser(promise, this, this.getCurrentActivity());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            promise.reject("0", e.getMessage());
+//        }
     }
 
     private void loginAndGetUserGoogle(Promise promise) {

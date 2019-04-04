@@ -21,5 +21,5 @@ android {
 dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation "com.google.android.gms:play-services-auth:16.0.1"
-    api 'com.facebook.android:facebook-login:4.40.0'
+//    api 'com.facebook.android:facebook-login:4.40.0'
 }
