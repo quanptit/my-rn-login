@@ -9,6 +9,8 @@ export declare class DialogLogin extends Component<Props> {
     constructor(props: any);
     loginSuccess(user: User): void;
     static loginError(error?: any): void;
+    private _renderSignFacebook;
+    private _renderSignGoogle;
     render(): JSX.Element;
     show(onShowed?: Function): void;
     dismiss(onDismissed?: Function): void;

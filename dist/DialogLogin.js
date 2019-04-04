@@ -21,9 +21,8 @@ export class DialogLogin extends Component {
         console.log("====== loginError: ", error);
         Toast.showLongBottom(getStringsCommon().has_error);
     }
-    render() {
-        return (<PopupDialog width={290} ref={(popupDialog) => { this.popupDialog = popupDialog; }}>
-                <Button model={ButtonModel.primary} style={{ backgroundColor: "#2A4787", alignSelf: "center", width: 250, marginTop: 30 }} onPress={async () => {
+    _renderSignFacebook() {
+        return (<Button model={ButtonModel.primary} style={{ backgroundColor: "#2A4787", alignSelf: "center", width: 250, marginTop: 30 }} onPress={async () => {
             this.dismiss();
             try {
                 let user = await UserUtils.loginAndGetUser("facebook");
@@ -33,11 +32,12 @@ export class DialogLogin extends Component {
                 DialogLogin.loginError(e);
             }
         }}>
-                    <Icon name="logo-facebook" style={{ fontSize: 25, color: "white", marginRight: 16 }}/>
-                    <Text style={[s.f_lar, s.white]}>Sign-in with Facebook</Text>
-                </Button>
-
-                <Button model={ButtonModel.primary} style={{ backgroundColor: "#F73C2B", alignSelf: "center", marginTop: 10, width: 250, marginBottom: 30 }} onPress={async () => {
+                <Icon name="logo-facebook" style={{ fontSize: 25, color: "white", marginRight: 16 }}/>
+                <Text style={[s.f_lar, s.white]}>Sign-in with Facebook</Text>
+            </Button>);
+    }
+    _renderSignGoogle() {
+        return (<Button model={ButtonModel.primary} style={{ backgroundColor: "#F73C2B", alignSelf: "center", marginTop: 10, width: 250, marginBottom: 30 }} onPress={async () => {
             this.dismiss();
             try {
                 let id = await UserUtils.loginAndGetUser("google");
@@ -47,9 +47,14 @@ export class DialogLogin extends Component {
                 DialogLogin.loginError(e);
             }
         }}>
-                    <Icon name="logo-google" style={{ fontSize: 25, color: "white", marginRight: 16 }}/>
-                    <Text style={[s.f_lar, s.white]}>{"Sign-in with Google     "}</Text>
-                </Button>
+                <Icon name="logo-google" style={{ fontSize: 25, color: "white", marginRight: 16 }}/>
+                <Text style={[s.f_lar, s.white]}>{"Sign-in with Google     "}</Text>
+            </Button>);
+    }
+    render() {
+        return (<PopupDialog width={290} ref={(popupDialog) => { this.popupDialog = popupDialog; }}>
+                
+                {this._renderSignGoogle()}
             </PopupDialog>);
     }
     show(onShowed) {
