@@ -13,5 +13,5 @@ export declare class UserUtils {
     static loginAndGetUser(provider: string): Promise<User>;
     static logout(provider: "facebook" | "google"): Promise<void>;
     static logoutAll(): Promise<void>;
-    private static setUserLogged;
+    static setUserLogged(user: User): Promise<void>;
 }

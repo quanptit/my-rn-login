@@ -4,14 +4,18 @@ import { User } from "my-rn-base-utils";
 interface Props extends ViewProps {
     callbackLoginSuccess: (user: User) => void;
 }
-export declare class DialogLogin extends Component<Props> {
+declare type States = {
+    isSigninInProgress?: boolean;
+};
+export declare class DialogLogin extends Component<Props, States> {
     private popupDialog;
     constructor(props: any);
-    loginSuccess(user: User): void;
+    loginSuccess(user: User): Promise<void>;
     static loginError(error?: any): void;
-    private _renderSignFacebook;
+    private _signIn;
     private _renderSignGoogle;
     render(): JSX.Element;
+    private _renderSignFacebook;
     show(onShowed?: Function): void;
     dismiss(onDismissed?: Function): void;
 }

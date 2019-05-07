@@ -64,7 +64,8 @@ export class UserUtils {
         await PreferenceUtils.deleteKey("USER");
     }
 
-    private static async setUserLogged(user: User) {
+    static async setUserLogged(user: User) {
+        UserUtils.userLogged = user;
         console.log("setUserLogged: ", user.id, user.name);
         await PreferenceUtils.saveObject("USER", user);
     }

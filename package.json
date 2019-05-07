@@ -17,5 +17,6 @@
   "devDependencies": {
   },
   "peerDependencies": {
+    "react-native-google-signin": "^2.0.0"
   }
 }
