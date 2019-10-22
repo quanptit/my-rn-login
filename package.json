@@ -1,6 +1,6 @@
 {
   "name": "my-rn-login",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "my-rn-login",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,10 +20,10 @@
     "url": "https://github.com/quanptit/my-rn-login.git"
   },
   "nativePackage": false,
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
   },
+  "devDependencies": {},
   "peerDependencies": {
-    "react-native-google-signin": "^2.0.0"
+    "@react-native-community/google-signin": "^3.0.3"
   }
 }
