@@ -5,7 +5,7 @@ export class RNLoginMoudule {
     /**
      * provider: enum (facebook, google). <br>
      * */
-    static async loginAndGetUser(provider: string): Promise<User> {
-        return NativeModules.RNLoginMoudule.loginAndGetUser(provider);
-    }
+    // static async loginAndGetUser(provider: string): Promise<User> {
+    //     return NativeModules.RNLoginMoudule.loginAndGetUser(provider);
+    // }
 }

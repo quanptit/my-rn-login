@@ -1,6 +1,5 @@
 import {getStringsCommon} from "my-rn-common-resource";
 import {isIOS, PreferenceUtils, RNCommonUtils, User} from "my-rn-base-utils";
-import {RNLoginMoudule} from "./RNLoginMoudule";
 
 
 export class UserUtils {
@@ -46,15 +45,15 @@ export class UserUtils {
      * provider: enum (facebook, google). <br>
      * return: {name, id, email}
      * */
-    static async loginAndGetUser(provider: string): Promise<User> {
-        let user = await RNLoginMoudule.loginAndGetUser(provider);
-        if (user) {
-            await this.setUserLogged(user);
-            UserUtils.userLogged = user;
-            return user;
-        }
-        return null;
-    }
+    // static async loginAndGetUser(provider: string): Promise<User> {
+    //     let user = await RNLoginMoudule.loginAndGetUser(provider);
+    //     if (user) {
+    //         await this.setUserLogged(user);
+    //         UserUtils.userLogged = user;
+    //         return user;
+    //     }
+    //     return null;
+    // }
 
     static async logout(provider: "facebook" | "google") {
         await PreferenceUtils.deleteKey("USER");

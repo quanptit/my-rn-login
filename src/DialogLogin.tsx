@@ -59,7 +59,7 @@ export class DialogLogin extends Component<Props, States> {
                 id = email;
 
             let user: User = {id: id, email: email, name: name};
-            this.loginSuccess(user);
+            await this.loginSuccess(user);
         } catch (error) {
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
                 console.log("user cancelled the login flow")
@@ -113,22 +113,22 @@ export class DialogLogin extends Component<Props, States> {
 
     //region hide
     private _renderSignFacebook() {
-        return (
-            <Button model={ButtonModel.primary}
-                    style={{backgroundColor: "#2A4787", alignSelf: "center", width: 250, marginTop: 30}}
-                    onPress={async () => {
-                        this.dismiss();
-                        try {
-                            let user = await UserUtils.loginAndGetUser("facebook");
-                            this.loginSuccess(user)
-                        } catch (e) {
-                            DialogLogin.loginError(e)
-                        }
-                    }}>
-                <Icon name="logo-facebook" style={{fontSize: 25, color: "white", marginRight: 16}}/>
-                <Text style={[s.f_lar, s.white]}>Sign-in with Facebook</Text>
-            </Button>
-        );
+        // return (
+        //     <Button model={ButtonModel.primary}
+        //             style={{backgroundColor: "#2A4787", alignSelf: "center", width: 250, marginTop: 30}}
+        //             onPress={async () => {
+        //                 this.dismiss();
+        //                 try {
+        //                     let user = await UserUtils.loginAndGetUser("facebook");
+        //                     this.loginSuccess(user)
+        //                 } catch (e) {
+        //                     DialogLogin.loginError(e)
+        //                 }
+        //             }}>
+        //         <Icon name="logo-facebook" style={{fontSize: 25, color: "white", marginRight: 16}}/>
+        //         <Text style={[s.f_lar, s.white]}>Sign-in with Facebook</Text>
+        //     </Button>
+        // );
     }
 
     show(onShowed?: Function) {

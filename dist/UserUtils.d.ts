@@ -10,7 +10,6 @@ export declare class UserUtils {
      * provider: enum (facebook, google). <br>
      * return: {name, id, email}
      * */
-    static loginAndGetUser(provider: string): Promise<User>;
     static logout(provider: "facebook" | "google"): Promise<void>;
     static logoutAll(): Promise<void>;
     static setUserLogged(user: User): Promise<void>;
