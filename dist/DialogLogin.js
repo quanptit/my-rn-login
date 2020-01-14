@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { Text } from 'react-native';
 import { UserUtils } from './UserUtils';
 import { PopupDialog, Toast, Button, ButtonModel, StyleUtils } from "my-rn-base-component";
 import { getStringsCommon } from "my-rn-common-resource";
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin';
+import { IconLogoGoogle } from "./IconLogoGoogle";
 const s = StyleUtils.getAllStyle();
 let isConfiged;
 export class DialogLogin extends Component {
@@ -72,7 +72,7 @@ export class DialogLogin extends Component {
             this.dismiss();
             await this._signIn();
         }}>
-                <Icon name="logo-google" style={{ fontSize: 25, color: "white", marginRight: 16 }}/>
+                <IconLogoGoogle fontSize={25} color="white" style={{ marginRight: 16 }}/>
                 <Text style={[s.f_lar, s.white]}>{"Sign-in with Google     "}</Text>
             </Button>);
     }
