@@ -5,7 +5,7 @@ import {_RenderCommonIconUtils, CommonIconProps} from "my-rn-base-component/dist
 export class IconLogoGoogle extends Component<CommonIconProps, any> {
 
     render() {
-        return _RenderCommonIconUtils({source: require("../assets/icons/logo-google.png"), ...this.props});
+        return _RenderCommonIconUtils({source: require("../assets/logo-google.png"), ...this.props});
     }
 
 }

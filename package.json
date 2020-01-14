@@ -1,12 +1,12 @@
 {
   "name": "my-rn-login",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "my-rn-login",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "install_npm": "yarn install",
-    "publish_npm": "yarn publish",
+    "publish_npm": "npm publish",
     "link_libs": "yarn link @react-native-community/google-signin @types/react @types/react-native react react-native my-rn-common-resource react-native-router-flux rn-fetch-blob"
   },
   "keywords": [
